@@ -142,6 +142,7 @@
                                     <outlet property="bodyTextTextLabel" destination="CKc-tQ-DqK" id="S7c-gu-1TT"/>
                                     <outlet property="timestampTextLabel" destination="lYj-hT-Hul" id="wDq-UN-h6c"/>
                                     <outlet property="titleTextLabel" destination="IvF-z5-bMy" id="J83-EC-yYU"/>
+                                    <segue destination="vjw-yW-HID" kind="show" id="e42-HO-eBm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -161,6 +162,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n7H-oC-GAJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2418.840579710145" y="137.94642857142856"/>
+        </scene>
+        <!--Entry Details-->
+        <scene sceneID="U0m-pa-lKG">
+            <objects>
+                <viewController id="vjw-yW-HID" customClass="EntryDetailViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GOL-7Q-PCE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9qk-M9-9Bd">
+                                <rect key="frame" x="30" y="170" width="354" height="339.5"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Journal Entry Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SJM-Al-J1J">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34t-49-VTZ">
+                                        <rect key="frame" x="0.0" y="34" width="354" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nUd-Aj-fZN">
+                                        <rect key="frame" x="0.0" y="62.5" width="354" height="32"/>
+                                        <segments>
+                                            <segment title="☀️"/>
+                                            <segment title="⛅️"/>
+                                            <segment title="🌧"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcN-hS-ArN">
+                                        <rect key="frame" x="0.0" y="101.5" width="354" height="2"/>
+                                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="aVR-ck-LCg"/>
+                                        </constraints>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=" " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ygL-WG-KYQ">
+                                        <rect key="frame" x="0.0" y="111.5" width="354" height="228"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2I4-QB-uqS" firstAttribute="bottom" secondItem="9qk-M9-9Bd" secondAttribute="bottom" constant="352.5" id="3Rx-fx-V5C"/>
+                            <constraint firstAttribute="trailing" secondItem="9qk-M9-9Bd" secondAttribute="trailing" constant="30" id="DjP-UH-Yfr"/>
+                            <constraint firstItem="9qk-M9-9Bd" firstAttribute="top" secondItem="2I4-QB-uqS" secondAttribute="top" constant="30" id="HdL-AO-yHp"/>
+                            <constraint firstItem="9qk-M9-9Bd" firstAttribute="leading" secondItem="2I4-QB-uqS" secondAttribute="leading" constant="30" id="Ujo-Ck-xYB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2I4-QB-uqS"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Entry Details" id="2AU-53-xMA"/>
+                    <connections>
+                        <outlet property="bodyTextTextView" destination="ygL-WG-KYQ" id="kVO-Qz-JdU"/>
+                        <outlet property="moodSegmentedControl" destination="nUd-Aj-fZN" id="Jhv-wV-wbJ"/>
+                        <outlet property="titleTextField" destination="SJM-Al-J1J" id="TGg-De-aJ2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ek-bT-c2u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3097" y="138"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="En8-eF-Hnh">
