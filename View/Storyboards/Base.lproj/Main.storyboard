@@ -142,7 +142,7 @@
                                     <outlet property="bodyTextTextLabel" destination="CKc-tQ-DqK" id="S7c-gu-1TT"/>
                                     <outlet property="timestampTextLabel" destination="lYj-hT-Hul" id="wDq-UN-h6c"/>
                                     <outlet property="titleTextLabel" destination="IvF-z5-bMy" id="J83-EC-yYU"/>
-                                    <segue destination="vjw-yW-HID" kind="show" id="e42-HO-eBm"/>
+                                    <segue destination="vjw-yW-HID" kind="show" identifier="EntryDetailsSegue" id="e42-HO-eBm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -154,7 +154,7 @@
                     <navigationItem key="navigationItem" title="Journal" id="bhT-Av-hYC">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="pNK-d2-fOI">
                             <connections>
-                                <segue destination="zDi-ZO-P5r" kind="presentation" modalPresentationStyle="fullScreen" id="1uj-Bb-k2E"/>
+                                <segue destination="zDi-ZO-P5r" kind="presentation" identifier="AddEntrySegue" modalPresentationStyle="fullScreen" id="1uj-Bb-k2E"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

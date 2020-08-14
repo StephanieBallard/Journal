@@ -9,13 +9,16 @@
 import UIKit
 
 class CreateEntryViewController: UIViewController {
+    
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextTextView: UITextView!
     @IBOutlet weak var moodSegmentedControl: UISegmentedControl!
     
+    var entryController: EntryController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        titleTextField.becomeFirstResponder()
     }
 
     @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
@@ -39,6 +42,7 @@ class CreateEntryViewController: UIViewController {
         } catch {
             NSLog("Error saving managed object context: \(error)")
         }
+        entryController?.sendEntryToServer(entry: newEntry)
     }
     
 }

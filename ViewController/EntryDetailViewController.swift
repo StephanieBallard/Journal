@@ -10,6 +10,7 @@ import UIKit
 
 class EntryDetailViewController: UIViewController {
 
+    var entryController: EntryController?
     var entry: Entry?
     var wasEdited: Bool = false
     
@@ -46,8 +47,6 @@ class EntryDetailViewController: UIViewController {
         } catch {
             print("Error saving edited Entry: \(error)")
         }
-        
-    
     }
     
     private func updateViews() {
